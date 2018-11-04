@@ -5,7 +5,7 @@
 
 <form:form role="form" action="/aluno/form" id="id-form" method="POST" modelAttribute="aluno">
 
-    <form:input type="text" id="nome" path="nome" />
+    <span> Seu nome:</span><form:input type="text" id="nome" path="nome" />
 
 
     <input type="submit">
