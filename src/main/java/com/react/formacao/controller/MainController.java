@@ -11,14 +11,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class MainController {
 
-	@Autowired
-	AlunoRepository alunoRepository;
+
 
 	 @RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
 	    public String homePage(Model model) {
-		 Aluno a = new Aluno();
-		 a.setName("Denini");
-		 alunoRepository.save(a);
+
 
 		 return "homePage";
 	    }
