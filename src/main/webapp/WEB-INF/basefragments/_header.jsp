@@ -1,13 +1,12 @@
-<%@page contentType="text/html;charset=UTF-8"%>
-<div style="background: #E0E0E0; height: 55px; padding: 5px;">
-   <div style="float: left">
-      <h1>Formação de grupos</h1>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!-- NAVBAR -->
+<nav class="navbar navbar-default navbar-fixed-top">
+   <div class="brand">
+      <a href="index.html"><img src="<c:url value="/resources/assets/img/logo-dark.png" />" alt="Klorofil Logo" class="img-responsive logo"></a>
    </div>
- 
-   <div style="float: right; padding: 10px; text-align: right;">
- 
-      Search <input name="search">
- 
-   </div>
- 
-</div>
+   <div class="container-fluid">
+      <div class="navbar-btn">
+         <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
+      </div>
+</nav>
+<!-- END NAVBAR -->

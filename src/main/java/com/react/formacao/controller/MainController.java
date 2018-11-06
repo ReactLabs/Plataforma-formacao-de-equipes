@@ -26,6 +26,8 @@ public class MainController {
 	        model.addAttribute("address", "Vietnam");
 	        model.addAttribute("phone", "...");
 	        model.addAttribute("email", "...");
+
+	        model.addAttribute("aluno","Brenno");
 	        return "contactusPage";
 	    }
 	
