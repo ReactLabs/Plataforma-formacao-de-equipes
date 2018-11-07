@@ -18,6 +18,20 @@ public class AlunoController {
     AlunoRepository alunoRepository;
 
 
+/*    @RequestMapping(value = { "/aluno/form"}, method = RequestMethod.GET)
+    public String formularioAluno(Model model){
+        model.addAttribute("aluno", new Aluno());
+        return "aluno_form";
+    }
+
+    @RequestMapping(value = { "/aluno/form"}, method = RequestMethod.POST)
+    public String receberAluno(@ModelAttribute Aluno aluno, Model model){
+
+        alunoRepository.save(aluno);
+
+        return "aluno_form";
+    }*/
+
     @RequestMapping(value = { "/aluno/form"}, method = RequestMethod.GET)
     public String formularioAluno(Model model){
         model.addAttribute("aluno", new Aluno());
