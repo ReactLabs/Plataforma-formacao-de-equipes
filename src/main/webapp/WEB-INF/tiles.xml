@@ -32,4 +32,9 @@
     </definition>
 
 
+    <definition name="turma_form" extends="base.definition">
+        <put-attribute name="title" value="Formulario Turma" />
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/turmaFormulario.jsp" />
+    </definition>
+
 </tiles-definitions>
