@@ -26,7 +26,6 @@ public class TurmaController {
     public String receberAluno(@ModelAttribute Turma turma, Model model){
 
         turmaRepository.save(turma);
-
         return "turma_form";
     }
 }

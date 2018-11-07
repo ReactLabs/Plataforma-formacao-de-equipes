@@ -4,8 +4,9 @@
     <form:form role="form" class="form-control" action="/turma/form" id="id-form" method="POST" modelAttribute="turma">
 
 
-        <label>Nome da nova turma: </label><form:input type="text" path="nome"/>
-        <label>Descrição da nova turma: </label><form:input type="text" path="descricao"/>
+        <label>Nome da nova turma: </label><form:input type="text" required="required" path="nome" />
+        <label>Descrição da nova turma: </label><form:input type="text" required="required" path="descricao" />
+        <label>Coloque a senha da nova: </label><form:input type="text" required="required" path="senha"/>
 
         <input type="submit">
     </form:form>

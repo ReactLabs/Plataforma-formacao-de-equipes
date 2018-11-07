@@ -12,9 +12,17 @@ public class Turma {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
 
-    private String hashEntrada;
     private String nome;
     private String descricao;
+    private String senha;
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
     public Long getId() {
         return id;
@@ -22,14 +30,6 @@ public class Turma {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getHashEntrada() {
-        return hashEntrada;
-    }
-
-    public void setHashEntrada(String hashEntrada) {
-        this.hashEntrada = hashEntrada;
     }
 
     public String getNome() {
