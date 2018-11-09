@@ -55,12 +55,23 @@ public class AlunoController {
         }
         QuestionarioPerguntas questionarioPerguntas = new QuestionarioPerguntas();
         questionarioPerguntas.setId_turma(turma);
+        //questionarioPerguntas.setSenha(turma.getSenha());
         model.addAttribute("aluno", questionarioPerguntas);
         return "aluno_form";
     }
 
     @RequestMapping(value = { "/aluno/form"}, method = RequestMethod.POST)
     public String receberAluno(@ModelAttribute QuestionarioPerguntas questionarioPerguntas, Model model){
+
+
+        //se a senha informada pelo aluno é diferente da turma
+        if (!(questionarioPerguntas.getSenha().equals(questionarioPerguntas.getId_turma().getSenha()))){
+            model.addAttribute("mensagem","A senha informada está incorreta");
+            model.addAttribute("aluno", questionarioPerguntas);
+            return "aluno_form";
+        }
+
+
 
         try {
             Aluno aluno =  new Aluno();
@@ -73,7 +84,7 @@ public class AlunoController {
             e.printStackTrace();
         }
 
-        model.addAttribute("aluno", new QuestionarioPerguntas());
-        return "aluno_form";
+        model.addAttribute("mensagem", "Pronto, agora você precisa apenas aguardar");
+        return "homePage";
     }
 }

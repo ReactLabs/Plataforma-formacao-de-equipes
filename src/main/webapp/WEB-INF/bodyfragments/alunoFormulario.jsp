@@ -1,5 +1,17 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@	page contentType="text/html;charset=UTF-8"%>
+
+<c:if test="${mensagem != null}">
+    <div class="row">
+        <h3> ATENÇÃO</h3>
+        <div class="alert alert-danger" style="margin: 0px 35px 5px 0px !important; padding: 10px !important;">
+            <strong>${mensagem}</strong>
+        </div>
+    </div>
+</c:if>
+
+
 
     <form:form class="form-control" action="/aluno/form" id="id-form" method="POST" modelAttribute="aluno">
 
@@ -9,6 +21,13 @@
             <label> Turma pertencente:</label>
             <form:input type="text" name="nome" path="id_turma" readonly="true" />
         </div>
+
+        <div class="form-group">
+            <label> Informe a senha passada pelo Professor:</label>
+            <form:input type="text" name="nome" path="senha" />
+        </div>
+
+
         <div class="form-group">
                 <label> 1) Depois de uma emoção, você fica impressionado por muito tempo, gosta de relembrar as emoções (agradáveis ou desagradáveis) do passado?</label>
                 <div class="checkbox">

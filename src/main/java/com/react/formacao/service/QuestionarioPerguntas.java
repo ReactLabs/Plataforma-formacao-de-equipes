@@ -11,7 +11,7 @@ public class QuestionarioPerguntas implements Serializable {
 
     private String nome;
     private Turma id_turma;
-
+    private String senha;
 
     private int pergunta1;
     private int pergunta2;
@@ -29,6 +29,13 @@ public class QuestionarioPerguntas implements Serializable {
     private int pergunta14;
     private int pergunta15;
 
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
     public Turma getId_turma() {
         return id_turma;
