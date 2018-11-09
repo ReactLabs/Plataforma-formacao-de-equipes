@@ -1,5 +1,6 @@
 package com.react.formacao.service;
 
+import com.react.formacao.entity.Turma;
 import com.react.formacao.enu.AlunoClassificacaoEnum;
 
 import java.io.Serializable;
@@ -9,6 +10,8 @@ import static com.react.formacao.enu.AlunoClassificacaoEnum.APATICO;
 public class QuestionarioPerguntas implements Serializable {
 
     private String nome;
+    private Turma id_turma;
+
 
     private int pergunta1;
     private int pergunta2;
@@ -25,6 +28,15 @@ public class QuestionarioPerguntas implements Serializable {
     private int pergunta13;
     private int pergunta14;
     private int pergunta15;
+
+
+    public Turma getId_turma() {
+        return id_turma;
+    }
+
+    public void setId_turma(Turma id_turma) {
+        this.id_turma = id_turma;
+    }
 
     public String getNome() {
         return nome;

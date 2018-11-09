@@ -3,21 +3,29 @@ package com.react.formacao.entity;
 
 import com.react.formacao.enu.AlunoClassificacaoEnum;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 public class Aluno implements Serializable {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private Long id;
     private String nome;
     private AlunoClassificacaoEnum tipoSocial;
 
 
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name = "idTurma")
+    private Turma id_turma;
+
+    public Turma getId_turma() {
+        return id_turma;
+    }
+
+    public void setId_turma(Turma id_turma) {
+        this.id_turma = id_turma;
+    }
 
     public AlunoClassificacaoEnum getTipoSocial() {
         return tipoSocial;

@@ -1,35 +1,54 @@
 package com.react.formacao.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
 public class Turma {
+
+
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    private Long idTurma;
 
     private String nome;
     private String descricao;
     private String senha;
+    private boolean aberta = true;
 
+    public boolean isAberta() {
+        return aberta;
+    }
+
+    public void setAberta(boolean aberta) {
+        this.aberta = aberta;
+    }
+
+    @OneToMany(mappedBy = "id_turma")
+    private List<Aluno> listAluno;
+
+    public List<Aluno> getListAluno() {
+        return listAluno;
+    }
+
+    public void setListAluno(List<Aluno> listAluno) {
+        this.listAluno = listAluno;
+    }
+
+    public Long getIdTurma() {
+        return idTurma;
+    }
+
+    public void setIdTurma(Long idTurma) {
+        this.idTurma = idTurma;
+    }
     public String getSenha() {
         return senha;
     }
 
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getNome() {

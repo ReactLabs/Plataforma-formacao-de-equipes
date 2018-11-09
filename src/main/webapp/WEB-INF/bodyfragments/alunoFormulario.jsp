@@ -6,6 +6,8 @@
         <div class="form-group">
             <label> Seu nome: </label>
             <form:input type="text" name="nome" path="nome" />
+            <label> Turma pertencente:</label>
+            <form:input type="text" name="nome" path="id_turma" readonly="true" />
         </div>
         <div class="form-group">
                 <label> 1) Depois de uma emoção, você fica impressionado por muito tempo, gosta de relembrar as emoções (agradáveis ou desagradáveis) do passado?</label>
