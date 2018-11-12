@@ -22,23 +22,31 @@
     </div>
     <div class="panel-body">
 
-        <!-- CONDENSED TABLE -->
-
-        <c:if test="${alunos} != null">
-            <table class="table">
+        <c:if test="${alunos != null}">
+            <table class="table table table-condensed">
                 <thead>
                 <tr>
                     <th>#</th>
                     <th>Aluno</th>
+                    <th>Tipo social</th>
                     <th>Ações</th>
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach alunos="${alunos}" var="aluno"></c:forEach>
+                <c:forEach items="${alunos}" var="aluno">
+                    <tr>
+                        <th><c:out value="${aluno.id}"/></th>
+                        <th><c:out value="${aluno.nome}"/></th>
+                        <th><c:out value="${aluno.getTipoSocial()}"/></th>
+                        <th>Ações</th>
+                    </tr>
+                </c:forEach>
                 </tbody>
             </table>
         </c:if>
-        <p>Essa turma não possui alunos cadastrados</p>
+        <c:if test="${alunos == null}">
+            <p>Essa turma não possui alunos cadastrados</p>
+        </c:if>
     </div>
 </div>
 

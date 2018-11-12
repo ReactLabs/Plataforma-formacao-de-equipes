@@ -34,7 +34,6 @@ public class Aluno implements Serializable {
     public void setTipoSocial(AlunoClassificacaoEnum tipoSocial) {
         this.tipoSocial = tipoSocial;
     }
-
     public Long getId() {
         return id;
     }
