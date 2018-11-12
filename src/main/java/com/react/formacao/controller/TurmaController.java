@@ -7,8 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import java.util.List;
+
+import java.awt.*;
 
 @Controller
 public class TurmaController {
@@ -27,5 +31,21 @@ public class TurmaController {
 
         turmaRepository.save(turma);
         return "turma_form";
+    }
+
+    @RequestMapping(value = {"/turma/visualizar/{idturma}"}, method = RequestMethod.GET)
+    public String visualizarTurma(@PathVariable Long idturma, Model model){
+         Turma turma = turmaRepository.findByIdTurma(idturma);
+
+        if(turma != null){
+            List<Aluno> alunos = turma.getListAluno();
+            model.addAttribute("turma",turma);
+            model.addAttribute("alunos",alunos);
+        }
+        else{
+            model.addAttribute("mensagem","Erro ao buscar turma");
+        }
+
+        return "visualizar_turma";
     }
 }

@@ -39,9 +39,9 @@
         <div class="main">
             <!-- MAIN CONTENT -->
             <div class="main-content">
-
-                <tiles:insertAttribute name="body" />
-
+                <div class="container-fluid">
+                    <tiles:insertAttribute name="body" />
+                </div>
             </div>
             <!-- END MAIN CONTENT -->
         </div>
