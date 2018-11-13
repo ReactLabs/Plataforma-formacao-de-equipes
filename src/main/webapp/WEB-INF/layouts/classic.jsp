@@ -44,10 +44,11 @@
                 </div>
             </div>
             <!-- END MAIN CONTENT -->
+            <tiles:insertAttribute name="footer" />
         </div>
 
     </div>
-    <tiles:insertAttribute name="footer" />
+
     <!-- Javascript -->
 
     <%--<script>
