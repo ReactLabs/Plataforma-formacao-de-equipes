@@ -42,4 +42,14 @@
         <put-attribute name="body" value="/WEB-INF/bodyfragments/turmaVisualizar.jsp" />
     </definition>
 
+    <definition name="404" extends="base.definition">
+        <put-attribute name="title" value="Erro 404" />
+        <put-attribute name="body" value="/WEB-INF/errosPath/404.jsp" />
+    </definition>
+
+    <definition name="500" extends="base.definition">
+        <put-attribute name="title" value="Erro interno" />
+        <put-attribute name="body" value="/WEB-INF/errosPath/500.jsp" />
+    </definition>
+
 </tiles-definitions>

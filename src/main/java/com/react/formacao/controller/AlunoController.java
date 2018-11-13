@@ -42,8 +42,8 @@ public class AlunoController {
         return "aluno_form";
     }*/
 
-    @RequestMapping(value = { "/questionario/{idTurma}"}, method = RequestMethod.GET)
-    public String formularioAluno(@PathVariable Long idTurma,  Model model){
+    @RequestMapping(value = { "aluno/questionario/{idTurma}"}, method = RequestMethod.GET)
+    public String questionario(@PathVariable Long idTurma,  Model model){
 
 
         Turma turma = this.turmaRepository.findByIdTurma(idTurma);

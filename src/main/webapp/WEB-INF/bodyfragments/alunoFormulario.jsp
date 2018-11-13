@@ -13,7 +13,7 @@
 
 
 
-    <form:form class="form-control" action="/aluno/form" id="id-form" method="POST" modelAttribute="aluno">
+    <form:form role="form" action="/aluno/form" id="id-form" method="POST" modelAttribute="aluno">
 
         <div class="form-group">
             <label> Seu nome: </label>
@@ -185,9 +185,9 @@
         </div>
 
 
-
-        <input type="submit">
+        <button type="submit" class="btn btn-success">Enviar</button>
     </form:form>
+
 
 
 
