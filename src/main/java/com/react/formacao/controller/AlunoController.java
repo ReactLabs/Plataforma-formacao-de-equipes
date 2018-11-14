@@ -83,10 +83,11 @@ public class AlunoController {
 
         }catch (Exception e){
             e.printStackTrace();
+            return "500";
         }
 
 
-        model.addAttribute("mensagem", "Pronto, seu tipo caracteristico é " + tipo +  "agora você precisa apenas aguardar");
+        model.addAttribute("mensagem", "Pronto, seu tipo caracteristico é " + tipo +  " agora você precisa apenas aguardar");
         return "homePage";
     }
 }
