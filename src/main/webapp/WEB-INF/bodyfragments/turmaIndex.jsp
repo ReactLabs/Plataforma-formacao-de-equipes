@@ -28,12 +28,12 @@
                 <tbody>
                 <c:forEach items="${turmas}" var="turma">
                     <tr>
-                        <th><c:out value="${turma.getIdTurma()}"/></th>
-                        <th><c:out value="${turma.getNome()}"/></th>
-                        <th><c:out value="${turma.isAberta()}"/></th>
-                        <th><a href="/turma/visualizar/${turma.getIdTurma()}" title="Visualizar" type="button" class="btn btn-info btn-sm"><span class="far fa-file-alt"></span></a>
+                        <td><c:out value="${turma.getIdTurma()}"/></td>
+                        <td><c:out value="${turma.getNome()}"/></td>
+                        <td><c:out value="${turma.isAberta()}"/></td>
+                        <td><a href="/turma/visualizar/${turma.getIdTurma()}" title="Visualizar" type="button" class="btn btn-info btn-sm"><span class="far fa-file-alt"></span></a>
                             <a href="/turma/excluir/${turma.getIdTurma()}" title="Excluir" type="button" class="btn btn-danger btn-sm"><span class="lnr lnr-trash"></span></a>
-                        </th>
+                        </td>
                     </tr>
                 </c:forEach>
                 </tbody>
