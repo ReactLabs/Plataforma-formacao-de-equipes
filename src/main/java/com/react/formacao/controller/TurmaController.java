@@ -33,6 +33,13 @@ public class TurmaController {
         return "turma_form";
     }
 
+    @RequestMapping(value = {"/turma/index"}, method = RequestMethod.GET)
+    public String indexTurma(Model model){
+        Iterable<Turma> turmas = turmaRepository.findAll();
+        model.addAttribute("turmas",turmas);
+        return "index_turma";
+    }
+
     @RequestMapping(value = {"/turma/visualizar/{idturma}"}, method = RequestMethod.GET)
     public String visualizarTurma(@PathVariable Long idturma, Model model){
          Turma turma = turmaRepository.findByIdTurma(idturma);
