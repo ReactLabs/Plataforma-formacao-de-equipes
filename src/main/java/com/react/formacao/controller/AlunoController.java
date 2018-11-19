@@ -72,19 +72,22 @@ public class AlunoController {
         }
 
 
-
+        String tipo = "";
         try {
             Aluno aluno =  new Aluno();
             aluno.setNome(questionarioPerguntas.getNome());
             aluno.setTipoSocial(questionarioPerguntas.definir());
+            tipo = aluno.getTipoSocial().getTipoSocail();
             aluno.setId_turma(questionarioPerguntas.getId_turma());
             alunoRepository.save(aluno);
 
         }catch (Exception e){
             e.printStackTrace();
+            return "500";
         }
 
-        model.addAttribute("mensagem", "Pronto, agora você precisa apenas aguardar");
+
+        model.addAttribute("mensagem", "Pronto, seu tipo caracteristico é " + tipo +  " agora você precisa apenas aguardar");
         return "homePage";
     }
 }
