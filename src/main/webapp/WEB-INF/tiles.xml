@@ -12,11 +12,21 @@
         <put-attribute name="menu" value="/WEB-INF/basefragments/_menu.jsp" />
         <put-attribute name="body" value="" />  
         <put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" />  
-    </definition>  
+    </definition>
+
+    <definition name="index_turma" extends="base.definition">
+        <put-attribute name="title" value="Lista de turmas cadastradas" />
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/turmaIndex.jsp" />
+    </definition>
+
+    <definition name="visualizar_turma" extends="base.definition">
+        <put-attribute name="title" value="Visualizar turma" />
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/turmaVisualizar.jsp" />
+    </definition>
  
     <!-- Home Page  -->
     <definition name="homePage" extends="base.definition">  
-        <put-attribute name="title" value="Home Page" />  
+        <put-attribute name="title" value="Home Page" />
         <put-attribute name="body" value="/WEB-INF/bodyfragments/_home.jsp" />  
     </definition>  
        
@@ -35,16 +45,6 @@
     <definition name="turma_form" extends="base.definition">
         <put-attribute name="title" value="Formulario Turma" />
         <put-attribute name="body" value="/WEB-INF/bodyfragments/turmaFormulario.jsp" />
-    </definition>
-
-    <definition name="index_turma" extends="base.definition">
-        <put-attribute name="title" value="Lista de turmas cadastradas" />
-        <put-attribute name="body" value="/WEB-INF/bodyfragments/turmaIndex.jsp" />
-    </definition>
-
-    <definition name="visualizar_turma" extends="base.definition">
-        <put-attribute name="title" value="Visualizar turma" />
-        <put-attribute name="body" value="/WEB-INF/bodyfragments/turmaVisualizar.jsp" />
     </definition>
 
     <definition name="404" extends="base.definition">
