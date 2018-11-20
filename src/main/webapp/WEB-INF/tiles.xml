@@ -5,6 +5,11 @@
         
 <tiles-definitions> 
  <!-- Base Define -->
+    <definition name="base.login"
+                template="/WEB-INF/layouts/login.jsp">
+        <put-attribute name="title" value="Login" />
+    </definition>
+
     <definition name="base.definition" 
         template="/WEB-INF/layouts/classic.jsp">  
         <put-attribute name="title" value="" />  
