@@ -20,6 +20,7 @@ public class TurmaController {
     @Autowired
     private TurmaRepository turmaRepository;
 
+
     @RequestMapping(value = { "/turma/inserir" }, method = RequestMethod.GET)
     public String homePage(Model model) {
         model.addAttribute("turma", new Turma());

@@ -28,9 +28,7 @@ public class ErroController implements ErrorController {
             }
         }
 
-
         return "500";
-
     }
 
     @Override
