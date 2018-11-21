@@ -15,7 +15,7 @@ public class UserController {
                 "{\"name\":\"Jackie\",\"country\":\"China\"}]}";
     }
 
-    @RequestMapping(value = {"/inicio"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
     public String login(Model model){
         return "login";
     }
