@@ -13,18 +13,18 @@ public class Aluno implements Serializable {
     private Long id;
     private String nome;
     private AlunoClassificacaoEnum tipoSocial;
-
+    private int equipe;
 
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "idTurma")
-    private Turma id_turma;
+    private Turma idTurma;
 
-    public Turma getId_turma() {
-        return id_turma;
+    public Turma getidTurma() {
+        return idTurma;
     }
 
-    public void setId_turma(Turma id_turma) {
-        this.id_turma = id_turma;
+    public void setidTurma(Turma idTurma) {
+        this.idTurma = idTurma;
     }
 
     public AlunoClassificacaoEnum getTipoSocial() {
@@ -49,4 +49,8 @@ public class Aluno implements Serializable {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public int getEquipe() { return equipe; }
+
+    public void setEquipe(int equipe) { this.equipe = equipe; }
 }

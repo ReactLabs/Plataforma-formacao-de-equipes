@@ -2,7 +2,9 @@ package com.react.formacao.controller;
 
 import com.react.formacao.entity.Aluno;
 import com.react.formacao.entity.Turma;
+import com.react.formacao.repository.AlunoRepository;
 import com.react.formacao.repository.TurmaRepository;
+import com.react.formacao.service.ClusterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +21,8 @@ public class TurmaController {
 
     @Autowired
     private TurmaRepository turmaRepository;
+    @Autowired
+    private AlunoRepository alunoRepository;
 
 
     @RequestMapping(value = { "/turma/inserir" }, method = RequestMethod.GET)
@@ -31,7 +35,11 @@ public class TurmaController {
     public String receberAluno(@ModelAttribute Turma turma, Model model){
 
         turmaRepository.save(turma);
-        return "turma_form";
+        Long id = turma.getIdTurma();
+        String redirect = "redirect:/turma/visualizar/" + id;
+
+
+        return redirect;
     }
 
     @RequestMapping(value = {"/turma/index"}, method = RequestMethod.GET)
@@ -44,10 +52,11 @@ public class TurmaController {
     @RequestMapping(value = {"/turma/visualizar/{idturma}"}, method = RequestMethod.GET)
     public String visualizarTurma(@PathVariable Long idturma, Model model){
          Turma turma = turmaRepository.findByIdTurma(idturma);
-
+         String link = "localhost:8080/aluno/questionario/" + idturma;
         if(turma != null){
             List<Aluno> alunos = turma.getListAluno();
             model.addAttribute("turma",turma);
+            model.addAttribute("link", link );
             model.addAttribute("alunos",alunos);
         }
         else{
@@ -55,5 +64,34 @@ public class TurmaController {
         }
 
         return "visualizar_turma";
+    }
+
+    @RequestMapping(value = {"/turma/fechar/{idturma}"}, method = RequestMethod.POST)
+    public String fecharTurma(@PathVariable Long idturma, Model model){
+        try{
+            Turma turma = turmaRepository.findByIdTurma(idturma);
+            turma.setAberta(false);
+            turmaRepository.save(turma);
+        }catch (Exception e){
+
+        }
+        return "redirect:/turma/equipes/" + idturma;
+    }
+
+
+    @RequestMapping(value = {"/turma/equipes/{idturma}"}, method = RequestMethod.GET)
+    public String fazerEquipes(@PathVariable Long idturma, Model model){
+
+        Turma turma = turmaRepository.findByIdTurma(idturma);
+        if(turma.isAberta()){
+            return "redirect:/tumra/visualizar/" + idturma;
+        }
+
+        List<Aluno> alunos = alunoRepository.findAllByIdTurma(turma);
+        ClusterService clusterService = new ClusterService(alunos);
+        clusterService.agrupar(2);
+
+
+        return "redirect:/turma/visualizar/" + idturma;
     }
 }
