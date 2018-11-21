@@ -25,7 +25,7 @@ public class Turma {
         this.aberta = aberta;
     }
 
-    @OneToMany(mappedBy = "id_turma")
+    @OneToMany(mappedBy = "idTurma")
     private List<Aluno> listAluno;
 
     public List<Aluno> getListAluno() {

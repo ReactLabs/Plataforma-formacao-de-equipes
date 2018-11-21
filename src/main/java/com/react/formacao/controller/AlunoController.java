@@ -78,7 +78,7 @@ public class AlunoController {
             aluno.setNome(questionarioPerguntas.getNome());
             aluno.setTipoSocial(questionarioPerguntas.definir());
             tipo = aluno.getTipoSocial().getTipoSocail();
-            aluno.setId_turma(questionarioPerguntas.getId_turma());
+            aluno.setidTurma(questionarioPerguntas.getId_turma());
             alunoRepository.save(aluno);
 
         }catch (Exception e){
