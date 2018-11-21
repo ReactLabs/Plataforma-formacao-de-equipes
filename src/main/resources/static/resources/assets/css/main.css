@@ -157,7 +157,7 @@ html.fullscreen-bg #wrapper {
     background-color: #f8f8f8; }
   .navbar-default .brand {
     float: left;
-    padding: 30px 39px;
+    padding: 0px 40px;
     background-color: #fff; }
   @media screen and (max-width: 1024px) {
     .navbar-default .brand {
@@ -570,6 +570,13 @@ ul.list-justify > li {
 .btn-group-xs > .btn,
 .btn-xs {
   padding: 5px 14px; }
+
+.btn-react {
+  background-color: #7A050E;
+  border-color: #5E040B; }
+.btn-react:hover, .btn-react:focus {
+  background-color: #640611;
+  border-color: #960611; }
 
 .btn-primary {
   background-color: #00AAFF;
@@ -1034,7 +1041,7 @@ ul.activity-list > li {
       display: block;
       width: 100%;
       height: 100%;
-      background: rgba(99, 156, 185, 0.92); }
+      background: rgba(100, 6, 17, 0.92); }
   .auth-box .header {
     margin-bottom: 30px; }
   .auth-box .lead {
@@ -1161,7 +1168,7 @@ ul.activity-list > li {
   .profile-header .profile-main {
     position: relative;
     padding: 20px;
-    background-image: url("..le-bg.png");
+    background-image: url("../../assets/img/profile-bg.png");
     background-repeat: no-repeat;
     background-size: cover; }
   .profile-header .name {

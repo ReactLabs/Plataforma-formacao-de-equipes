@@ -43,7 +43,7 @@
                 <div class="left">
                     <div class="content">
                         <div class="header">
-                            <div class="logo text-center"><img src="<c:url value="/resources/assets/img/logo-dark.png" />" alt="Klorofil Logo"></div>
+                            <div class="logo text-center"><img src="<c:url value="/resources/assets/img/react.png" />" alt="Klorofil Logo"></div>
                             <p class="lead">Login to your account</p>
                         </div>
                         <form class="form-auth-small" action="/login" method="POST">
@@ -55,10 +55,7 @@
                                 <label for="signin-password" class="control-label sr-only">Password</label>
                                 <input type="password" class="form-control" id="signin-password" name="password" placeholder="Password">
                             </div>
-                            <button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
-                            <div class="bottom">
-                                <span class="helper-text"><i class="fa fa-lock"></i> <a href="#">Forgot password?</a></span>
-                            </div>
+                            <button type="submit" class="btn btn-react btn-lg btn-block">LOGIN</button>
                         </form>
                     </div>
                 </div>
