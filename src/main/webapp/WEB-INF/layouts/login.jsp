@@ -62,7 +62,7 @@
                 <div class="right">
                     <div class="overlay"></div>
                     <div class="content text">
-                        <h1 class="heading">Free Bootstrap dashboard template</h1>
+                        <h1 class="heading">REACTing to the next level!</h1>
                         <p>by The Develovers</p>
                     </div>
                 </div>
