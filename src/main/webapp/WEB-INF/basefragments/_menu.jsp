@@ -5,7 +5,6 @@
         <nav>
             <ul class="nav">
                 <li><a href="/"><i class="lnr lnr-home"></i> <span>Home</span></a></li>
-                <li><a href="/aluno/form"   ><i class="lnr lnr-pencil"></i> <span>Questionario</span></a></li>
                 <li><a href="/turma/inserir" class=""><i class="lnr lnr-magic-wand"></i> <span>Criar nova turma</span></a></li>
                 <li><a href="/turma/index" class=""><i class="lnr lnr lnr-user"></i> <span>Lista de turmas</span></a></li>
             </ul>

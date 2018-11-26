@@ -1,6 +1,7 @@
 package com.react.formacao.controller;
 
 import com.react.formacao.entity.Aluno;
+import com.react.formacao.entity.QuantidadeTurma;
 import com.react.formacao.entity.Turma;
 import com.react.formacao.repository.AlunoRepository;
 import com.react.formacao.repository.TurmaRepository;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import java.awt.*;
@@ -67,13 +70,21 @@ public class TurmaController {
     }
 
     @RequestMapping(value = {"/turma/fechar/{idturma}"}, method = RequestMethod.POST)
-    public String fecharTurma(@PathVariable Long idturma, Model model){
+    public String fecharTurma(@PathVariable Long idturma, @ModelAttribute(name = "qnt") QuantidadeTurma quantidade_grupos, Model model){
         try{
             Turma turma = turmaRepository.findByIdTurma(idturma);
             turma.setAberta(false);
             turmaRepository.save(turma);
-        }catch (Exception e){
 
+            List<Aluno> alunos = alunoRepository.findAllByIdTurma(turma);
+            ClusterService clusterService = new ClusterService(alunos);
+            ArrayList<ArrayList<Aluno>> grupos = clusterService.agrupar(quantidade_grupos.getQuantidadeGrupos());
+            clusterService.organizarGrupo(grupos, alunoRepository);
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+            return "500";
         }
         return "redirect:/turma/equipes/" + idturma;
     }
@@ -84,12 +95,11 @@ public class TurmaController {
 
         Turma turma = turmaRepository.findByIdTurma(idturma);
         if(turma.isAberta()){
-            return "redirect:/tumra/visualizar/" + idturma;
-        }
+            return "redirect:/turma/visualizar/" + idturma;
+        }else{
+            alunoRepository.findAllByIdTurma(turma);
 
-        List<Aluno> alunos = alunoRepository.findAllByIdTurma(turma);
-        ClusterService clusterService = new ClusterService(alunos);
-        clusterService.agrupar(2);
+        }
 
 
         return "redirect:/turma/visualizar/" + idturma;

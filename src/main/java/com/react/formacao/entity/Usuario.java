@@ -5,9 +5,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Collection;
 
 @Entity
+@Table(name = "usuario")
 public class Usuario implements UserDetails {
 
     @Id

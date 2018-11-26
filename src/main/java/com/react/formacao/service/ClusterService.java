@@ -2,6 +2,8 @@ package com.react.formacao.service;
 
 import com.react.formacao.entity.Aluno;
 import com.react.formacao.enu.AlunoClassificacaoEnum;
+import com.react.formacao.repository.AlunoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +21,7 @@ public class ClusterService {
     private ArrayList<Aluno> Lider;
 
     private int qndAlunos;
+
 
     public ClusterService(List<Aluno> alunos) {
         this.Melancolico = new ArrayList<>();
@@ -227,5 +230,16 @@ public class ClusterService {
         for(int i = 0; i < array.size(); i++){
             afins.add(afins.size(),array.get(i));
         }
+    }
+
+    public void organizarGrupo(ArrayList<ArrayList<Aluno>> grupos , AlunoRepository alunoRepository){
+        for(int i =0 ; i < grupos.size(); i++){
+            for(Aluno aluno : grupos.get(i)){
+                aluno.setEquipe(i+1);
+                alunoRepository.save(aluno);
+            }
+        }
+
+
     }
 }

@@ -75,7 +75,8 @@
             <div class="modal-body">
                 Tem certeza que deseja fechar a turma e iniciar a criação das Equipes?
             </div>
-            <form action="/turma/fechar/<c:out value="${turma.idTurma}"></c:out>" method="post">
+            <form action="/turma/fechar/<c:out value="${turma.idTurma}"></c:out>" method="post" modelAttribute="qnt">
+                <label>Informe a quantidade de grupos</label><input type="number" value="2" min="1" name="quantidadeGrupos" required>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Agora não!</button>
                     <button type="submit" class="btn btn-primary">Sim, tenho certeza</button>
