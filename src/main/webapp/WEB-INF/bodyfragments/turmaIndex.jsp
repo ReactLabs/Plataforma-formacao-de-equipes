@@ -30,7 +30,12 @@
                     <tr>
                         <td><c:out value="${turma.getIdTurma()}"/></td>
                         <td><c:out value="${turma.getNome()}"/></td>
-                        <td><c:out value="${turma.isAberta()}"/></td>
+                        <c:if test="${turma.isAberta()}">
+                            <td>Aberta</td>
+                        </c:if>
+                        <c:if test="${!turma.isAberta()}">
+                            <td>Fechada</td>
+                        </c:if>
                         <td><a href="/turma/visualizar/${turma.getIdTurma()}" title="Visualizar" type="button" class="btn btn-info btn-sm"><span class="far fa-file-alt"></span></a>
                             <a href="/turma/excluir/${turma.getIdTurma()}" title="Excluir" type="button" class="btn btn-danger btn-sm"><span class="lnr lnr-trash"></span></a>
                         </td>
