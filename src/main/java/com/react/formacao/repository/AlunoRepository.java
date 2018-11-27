@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface AlunoRepository extends CrudRepository<Aluno, Long> {
     public List<Aluno> findAllByIdTurma(Turma id_turma);
+
+    public List<Aluno> findByIdTurmaOrderByEquipeDesc(Turma id_turma);
 }

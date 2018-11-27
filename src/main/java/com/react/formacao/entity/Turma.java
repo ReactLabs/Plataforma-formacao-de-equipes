@@ -17,6 +17,9 @@ public class Turma {
     private String senha;
     private boolean aberta = true;
 
+    @OneToMany(mappedBy = "idTurma")
+    private List<Aluno> listAluno;
+
     public boolean isAberta() {
         return aberta;
     }
@@ -24,9 +27,6 @@ public class Turma {
     public void setAberta(boolean aberta) {
         this.aberta = aberta;
     }
-
-    @OneToMany(mappedBy = "idTurma")
-    private List<Aluno> listAluno;
 
     public List<Aluno> getListAluno() {
         return listAluno;

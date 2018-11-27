@@ -97,11 +97,28 @@ public class TurmaController {
         if(turma.isAberta()){
             return "redirect:/turma/visualizar/" + idturma;
         }else{
-            alunoRepository.findAllByIdTurma(turma);
+            List<Aluno> alunos = alunoRepository.findByIdTurmaOrderByEquipeDesc(turma);
+            ArrayList<List<Aluno>> grupos = new  ArrayList<List<Aluno>>();
+            while(alunos.size() != 0){
+                List<Aluno> grupoNovo = new ArrayList<>();
+                Aluno a =alunos.remove(0);
+                int idEquipe = a.getEquipe();
+                grupoNovo.add(a);
+                while(alunos.size() != 0 && alunos.get(0).getEquipe() == idEquipe ){
+                    grupoNovo.add(alunos.remove(0));
+                }
+                grupos.add(grupoNovo);
+            }
 
+
+            //grupos que ficou com TUDO
+
+            model.addAttribute("grupos", grupos);
+            model.addAttribute("size",grupos.size());
+            return "view_equipes";
         }
 
 
-        return "redirect:/turma/visualizar/" + idturma;
+       // return "redirect:/turma/visualizar/" + idturma;
     }
 }

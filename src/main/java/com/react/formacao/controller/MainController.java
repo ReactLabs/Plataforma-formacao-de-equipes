@@ -21,16 +21,4 @@ public class MainController {
 
 	 		return "homePage";
 	    }
-	 
-	     
-	    @RequestMapping(value = { "/contactus" }, method = RequestMethod.GET)
-	    public String contactusPage(Model model) {
-	        model.addAttribute("address", "Vietnam");
-	        model.addAttribute("phone", "...");
-	        model.addAttribute("email", "...");
-
-	        model.addAttribute("aluno","Brenno");
-	        return "contactusPage";
-	    }
-	
 }
