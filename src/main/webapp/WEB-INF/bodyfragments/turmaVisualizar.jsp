@@ -29,7 +29,6 @@
         </div>
     </div>
     <div class="panel-body">
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Fechar turma e criar as equipes</button>
 
         <c:if test="${turma.isAberta()}">
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Fechar turma e criar as equipes</button>
