@@ -121,4 +121,11 @@ public class TurmaController {
 
        // return "redirect:/turma/visualizar/" + idturma;
     }
+
+    @RequestMapping(value = {"/turma/excluir/{idturma}"}, method = RequestMethod.GET)
+    public String excluir(@PathVariable Long idturma){
+        this.turmaRepository.deleteById(idturma);
+        return "redirect:/turma/index";
+    }
+
 }

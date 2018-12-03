@@ -9,10 +9,7 @@ import com.react.formacao.service.QuestionarioPerguntas;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -26,21 +23,6 @@ public class AlunoController {
 
     @Autowired
     private TurmaRepository turmaRepository;
-
-
-/*    @RequestMapping(value = { "/aluno/form"}, method = RequestMethod.GET)
-    public String formularioAluno(Model model){
-        model.addAttribute("aluno", new Aluno());
-        return "aluno_form";
-    }
-
-    @RequestMapping(value = { "/aluno/form"}, method = RequestMethod.POST)
-    public String receberAluno(@ModelAttribute Aluno aluno, Model model){
-
-        alunoRepository.save(aluno);
-
-        return "aluno_form";
-    }*/
 
     @RequestMapping(value = { "aluno/questionario/{idTurma}"}, method = RequestMethod.GET)
     public String questionario(@PathVariable Long idTurma,  Model model){
@@ -89,5 +71,46 @@ public class AlunoController {
 
         model.addAttribute("mensagem", "Pronto, seu tipo caracteristico é " + tipo +  " agora você precisa apenas aguardar");
         return "homePage";
+    }
+
+    @GetMapping(value = "/aluno/excluir/{id}")
+    public String excluir(@PathVariable Long id){
+        Aluno aluno = this.alunoRepository.findById(id).orElse(null);
+
+        if(aluno == null){
+            return "redirect:turma/index";
+        }
+        this.alunoRepository.delete(aluno);
+
+        return "redirect:/turma/index";
+    }
+
+
+    @GetMapping(value = "/aluno/editar/{id}")
+    public String editar(@PathVariable Long id, Model model){
+        Aluno aluno = this.alunoRepository.findById(id).orElse(null);
+
+        if(aluno == null){
+            return "redirect:/turma/index";
+        }
+
+        model.addAttribute("aluno",aluno);
+        return "editar_aluno";
+
+    }
+
+    @GetMapping("/aluno/edit/{id}")
+    public String editarPost(@PathVariable Long id, @RequestParam String nomeAluno, Model model){
+        Aluno alunoBanco = this.alunoRepository.findById(id).orElse(null);
+
+        if(alunoBanco == null){
+            return "redirect:/turma/index";
+        }
+
+        alunoBanco.setNome(nomeAluno);
+        this.alunoRepository.save(alunoBanco);
+
+
+        return "redirect:/";
     }
 }

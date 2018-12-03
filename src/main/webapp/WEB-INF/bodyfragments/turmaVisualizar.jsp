@@ -29,8 +29,8 @@
         </div>
     </div>
     <div class="panel-body">
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Fechar turma e criar as equipes</button>
-
+        <%--<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Fechar turma e criar as equipes</button>
+--%>
         <c:if test="${turma.isAberta()}">
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Fechar turma e criar as equipes</button>
         </c:if>
@@ -55,7 +55,9 @@
                         <th><c:out value="${aluno.id}"/></th>
                         <th><c:out value="${aluno.nome}"/></th>
                         <th><c:out value="${aluno.getTipoSocial()}"/></th>
-                        <th>Ações</th>
+                        <td><a href="/aluno/editar/${aluno.id}" title="Editar" type="button" class="btn btn-info btn-sm"><span class="fa fa-edit"></span></a>
+                            <a href="/aluno/excluir/${aluno.id}" title="Excluir" type="button" class="btn btn-danger btn-sm"><span class="lnr lnr-trash"></span></a>
+                        </td>
                     </tr>
                 </c:forEach>
                 </tbody>
