@@ -62,6 +62,10 @@
         <put-attribute name="body" value="/WEB-INF/bodyfragments/editar_aluno.jsp" />
     </definition>
 
+    <definition name="editar_aluno_equipe" extends="base.definition">
+        <put-attribute name="title" value="Formulario Turma" />
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/editar_aluno_equipe.jsp" />
+    </definition>
 
 
     <definition name="404" extends="base.definition">

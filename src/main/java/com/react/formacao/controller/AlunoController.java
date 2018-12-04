@@ -113,4 +113,34 @@ public class AlunoController {
 
         return "redirect:/";
     }
+
+    /*editar equipe do aluno*/
+    @GetMapping(value = "/aluno/editar/equipe/{id}")
+    public String editarEquipe(@PathVariable Long id, Model model){
+        Aluno aluno = this.alunoRepository.findById(id).orElse(null);
+
+        if(aluno == null){
+            return "redirect:/turma/index";
+        }
+
+        model.addAttribute("aluno",aluno);
+        return "editar_aluno_equipe";
+
+    }
+
+    @GetMapping("/aluno/edit/equipe/{id}")
+    public String editarPost(@PathVariable Long id, @RequestParam int idEquipe, Model model){
+        Aluno alunoBanco = this.alunoRepository.findById(id).orElse(null);
+
+        if(alunoBanco == null){
+            return "redirect:/turma/index";
+        }
+
+        alunoBanco.setEquipe(idEquipe);
+        this.alunoRepository.save(alunoBanco);
+
+
+        return "redirect:/";
+    }
+
 }
