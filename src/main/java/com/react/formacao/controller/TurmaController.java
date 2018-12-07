@@ -40,8 +40,6 @@ public class TurmaController {
         turmaRepository.save(turma);
         Long id = turma.getIdTurma();
         String redirect = "redirect:/turma/visualizar/" + id;
-
-
         return redirect;
     }
 
