@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!doctype html>
 <html lang="en" class="fullscreen-bg" contentType="text/html">
 
@@ -11,6 +12,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- VENDOR CSS -->
     <base href="/">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/assets/vendor/bootstrap/css/bootstrap.min.css" />">
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/assets/vendor/font-awesome/css/font-awesome.min.css" />">
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/assets/vendor/linearicons/style.css" />">
@@ -41,14 +44,19 @@
                         </div>
                         <form class="form-auth-small" action="/login" method="POST">
                             <div class="form-group">
-                                <label for="signin-email" class="control-label sr-only">Email</label>
+                                <label for="signin-email" class="control-label sr-only">Login</label>
                                 <input type="text" class="form-control" id="signin-email" name="username" placeholder="Email">
                             </div>
                             <div class="form-group">
-                                <label for="signin-password" class="control-label sr-only">Password</label>
+                                <label for="signin-password" class="control-label sr-only">Senha</label>
                                 <input type="password" class="form-control" id="signin-password" name="password" placeholder="Password">
                             </div>
-                            <button type="submit" class="btn btn-react btn-lg btn-block">LOGIN</button>
+                            <div class="row">
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                                    Desejo me cadastrar.
+                                </button>
+                                <button type="submit" class="btn btn-react btn-lg btn-block">LOGIN</button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -60,6 +68,42 @@
                     </div>
                 </div>
                 <div class="clearfix"></div>
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="exampleModalLabel">Cadastro de novos professores:</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                    <h4 class="panel-collapse"> Faça seu pre-cadastro e logo ativaremos sua conta!</h4>
+
+                                    <form:form role="form" action="/cadastro" id="id-form" method="POST" modelAttribute="cadastro">
+
+                                        <form:input type="text" class="form-control" placeholder="Digite seu login" required="required" path="login" />
+                                        <br>
+                                        <form:input type="text" class="form-control" placeholder="Seu nome" required="required" path="nome" />
+                                        <br>
+                                        <form:input type="text" class="form-control" placeholder="Deixe alguma observacao (Opicional)"  path="observacao" />
+                                        <br>
+                                        <form:input type="password" class="form-control" placeholder="Senha" required="required" path="senha"/>
+                                        <br>
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-success" type="submit">Quero me cadastrar!</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+                            </div>
+                                    </form:form>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </div>
