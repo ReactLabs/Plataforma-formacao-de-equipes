@@ -81,13 +81,13 @@
                             <div class="modal-body">
                                     <h4 class="panel-collapse"> Faça seu pre-cadastro e logo ativaremos sua conta!</h4>
 
-                                    <form:form role="form" action="/cadastro" id="id-form" method="POST" modelAttribute="cadastro">
+                                    <form:form role="form" action="/cadastro" id="cadastro-form" method="POST" modelAttribute="cadastro">
 
                                         <form:input type="text" class="form-control" placeholder="Digite seu login" required="required" path="login" />
                                         <br>
                                         <form:input type="text" class="form-control" placeholder="Seu nome" required="required" path="nome" />
                                         <br>
-                                        <form:input type="text" class="form-control" placeholder="Deixe alguma observacao (Opicional)"  path="observacao" />
+                                        <form:input type="text" class="form-control" placeholder="Deixe alguma observacao (Opcional)"  path="observacao" />
                                         <br>
                                         <form:input type="password" class="form-control" placeholder="Senha" required="required" path="senha"/>
                                         <br>
@@ -95,7 +95,7 @@
 
                             </div>
                             <div class="modal-footer">
-                                <button class="btn btn-success" type="submit">Quero me cadastrar!</button>
+                                <button class="btn btn-success" type="submit" id="cadastro">Quero me cadastrar!</button>
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
                             </div>
                                     </form:form>
@@ -111,4 +111,10 @@
 <!-- END WRAPPER -->
 </body>
 
+<script>
+    $('#cadastro-form').on("submit", function () {
+        alert('Em Breve ativaremos sua conta!');
+    });
+
+</script>
 </html>

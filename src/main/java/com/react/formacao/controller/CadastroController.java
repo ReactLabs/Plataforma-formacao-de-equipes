@@ -39,7 +39,6 @@ public class CadastroController {
     @GetMapping(value = "/dashboard/listar")
     public String listarCadastros(Model model){
         Iterable<Cadastro> cadastroList = cadastroRepository.findAll();
-
         model.addAttribute("cadastros", cadastroList);
         return "listarCadastos";
     }
@@ -59,6 +58,13 @@ public class CadastroController {
             e.printStackTrace();
             //add mensagem de erro
         }
+        return "redirect:/dashboard/listar";
+    }
+
+    @GetMapping(value = "/dashboard/excluirUsuario/{id}")
+    public String excluirUsuario(@PathVariable String id){
+        Cadastro cadastro = cadastroRepository.findByLogin(id);
+        cadastroRepository.delete(cadastro);
         return "redirect:/dashboard/listar";
     }
 

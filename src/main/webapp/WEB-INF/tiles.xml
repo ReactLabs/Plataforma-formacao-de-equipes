@@ -67,6 +67,11 @@
         <put-attribute name="body" value="/WEB-INF/bodyfragments/editar_aluno_equipe.jsp" />
     </definition>
 
+    <definition name="listarCadastos" extends="base.definition">
+        <put-attribute name="title" value="Lista de turmas cadastradas" />
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/listarCadastos.jsp" />
+    </definition>
+
     <!--<definition name="cadastro_form" extends="base.definition">
         <put-attribute name="title" value="Formulario Turma" />
         <put-attribute name="body" value="/WEB-INF/bodyfragments/cadastro_form.jsp" />

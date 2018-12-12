@@ -1,3 +1,10 @@
+<%--
+ATENCAO
+*
+*   NAO ESTÁ EM USO
+*
+--%>
+
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@	page contentType="text/html;charset=UTF-8"%>
 
@@ -16,7 +23,7 @@
             <br>
             <form:input type="password" class="form-control" placeholder="Senha" required="required" path="senha"/>
             <br>
-            <button class="btn btn-success" type="submit">Salvar</button>
+            <button class="btn btn-success" type="submit" >Salvar</button>
         </div>
         </form:form>
     </div>
