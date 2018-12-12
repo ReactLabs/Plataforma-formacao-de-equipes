@@ -45,11 +45,11 @@
                         <form class="form-auth-small" action="/login" method="POST">
                             <div class="form-group">
                                 <label for="signin-email" class="control-label sr-only">Login</label>
-                                <input type="text" class="form-control" id="signin-email" name="username" placeholder="Email">
+                                <input type="text" class="form-control" id="signin-email" name="username" placeholder="login">
                             </div>
                             <div class="form-group">
                                 <label for="signin-password" class="control-label sr-only">Senha</label>
-                                <input type="password" class="form-control" id="signin-password" name="password" placeholder="Password">
+                                <input type="password" class="form-control" id="signin-password" name="password" placeholder="senha">
                             </div>
                             <div class="row">
                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
