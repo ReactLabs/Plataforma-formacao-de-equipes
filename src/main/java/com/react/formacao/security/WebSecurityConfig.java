@@ -24,11 +24,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity.csrf().disable().authorizeRequests()
                 .antMatchers("/aluno/questionario/**").permitAll()
                 .antMatchers("/cadastro/**").permitAll()
+                .antMatchers(HttpMethod.POST, "/aluno/form/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login").permitAll()
                 .and()
                 .logout().permitAll();
+
+
 
     }
 

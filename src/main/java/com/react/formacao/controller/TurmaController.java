@@ -3,10 +3,12 @@ package com.react.formacao.controller;
 import com.react.formacao.entity.Aluno;
 import com.react.formacao.entity.QuantidadeTurma;
 import com.react.formacao.entity.Turma;
+import com.react.formacao.entity.Usuario;
 import com.react.formacao.repository.AlunoRepository;
 import com.react.formacao.repository.TurmaRepository;
 import com.react.formacao.service.ClusterService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,8 +38,9 @@ public class TurmaController {
     }
 
     @RequestMapping(value = { "/turma/form"}, method = RequestMethod.POST)
-    public String receberAluno(@ModelAttribute Turma turma, Model model){
-
+    public String receberAluno(@ModelAttribute Turma turma, Model model, HttpSession session){
+        Usuario u = (Usuario)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        turma.setCriadoPor(u.getUsername());
         turmaRepository.save(turma);
         Long id = turma.getIdTurma();
         String redirect = "redirect:/turma/visualizar/" + id;
@@ -44,8 +48,9 @@ public class TurmaController {
     }
 
     @RequestMapping(value = {"/turma/index"}, method = RequestMethod.GET)
-    public String indexTurma(Model model){
-        Iterable<Turma> turmas = turmaRepository.findAll();
+    public String indexTurma(Model model, HttpSession session){
+        Usuario u = (Usuario)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Iterable<Turma> turmas = turmaRepository.findAllByCriadoPor(u.getUsername());
         model.addAttribute("turmas",turmas);
         return "index_turma";
     }
@@ -59,6 +64,7 @@ public class TurmaController {
             model.addAttribute("turma",turma);
             model.addAttribute("link", link );
             model.addAttribute("alunos",alunos);
+            model.addAttribute("idTurma", idturma);
         }
         else{
             model.addAttribute("mensagem","Erro ao buscar turma");

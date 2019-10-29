@@ -19,6 +19,15 @@
         <put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" />  
     </definition>
 
+    <definition name="base.definition.clear"
+                template="/WEB-INF/layouts/classic_clear.jsp">
+        <put-attribute name="title" value="" />
+        <!--<put-attribute name="header" value="/WEB-INF/basefragments/_header.jsp" />-->
+        <!--<put-attribute name="menu" value="/WEB-INF/basefragments/_menu.jsp" />-->
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" />
+    </definition>
+
     <definition name="index_turma" extends="base.definition">
         <put-attribute name="title" value="Lista de turmas cadastradas" />
         <put-attribute name="body" value="/WEB-INF/bodyfragments/turmaIndex.jsp" />
@@ -30,18 +39,24 @@
     </definition>
  
     <!-- Home Page  -->
-    <definition name="homePage" extends="base.definition">  
+    <definition name="homePage" extends="base.definition">
         <put-attribute name="title" value="Home Page" />
         <put-attribute name="body" value="/WEB-INF/bodyfragments/_home.jsp" />  
-    </definition>  
-       
+    </definition>
+
+    <!-- Home Page  -->
+    <definition name="homePageClear" extends="base.definition.clear">
+        <put-attribute name="title" value="Home Page" />
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/_home.jsp" />
+    </definition>
+
     <!-- ContactUs Page -->
     <definition name="contactusPage" extends="base.definition">  
         <put-attribute name="title" value="Contact Us" />  
         <put-attribute name="body" value="/WEB-INF/bodyfragments/_contactus.jsp" />  
     </definition>
 
-    <definition name="aluno_form" extends="base.definition">
+    <definition name="aluno_form" extends="base.definition.clear">
         <put-attribute name="title" value="Formulario" />
         <put-attribute name="body" value="/WEB-INF/bodyfragments/alunoFormulario.jsp" />
     </definition>

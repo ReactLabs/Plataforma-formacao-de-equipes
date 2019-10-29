@@ -52,10 +52,10 @@
                                 <input type="password" class="form-control" id="signin-password" name="password" placeholder="senha">
                             </div>
                             <div class="row">
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-                                    Desejo me cadastrar.
-                                </button>
                                 <button type="submit" class="btn btn-react btn-lg btn-block">LOGIN</button>
+                                <a  href="" data-toggle="modal" data-target="#exampleModal">
+                                    Desejo me cadastrar.
+                                </a>
                             </div>
                         </form>
                     </div>
@@ -73,10 +73,11 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title" id="exampleModalLabel">Cadastro de novos professores:</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                                <h4 class="modal-title" id="exampleModalLabel">Cadastro de novos professores:
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </h4>
                             </div>
                             <div class="modal-body">
                                     <h4 class="panel-collapse"> Faça seu pre-cadastro e logo ativaremos sua conta!</h4>

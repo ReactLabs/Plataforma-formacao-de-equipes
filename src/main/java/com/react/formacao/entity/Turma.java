@@ -12,6 +12,7 @@ public class Turma {
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private Long idTurma;
 
+    private String criadoPor;
     private String nome;
     private String descricao;
     private String senha;
@@ -65,5 +66,13 @@ public class Turma {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public String getCriadoPor() {
+        return criadoPor;
+    }
+
+    public void setCriadoPor(String criadoPor) {
+        this.criadoPor = criadoPor;
     }
 }

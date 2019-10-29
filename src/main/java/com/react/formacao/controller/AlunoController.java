@@ -33,7 +33,7 @@ public class AlunoController {
 
         if(!turma.isAberta()){      //se a turma nao ta aberta
             model.addAttribute("mensagem", "A turma que você tentou entrar já não está mais aberta");
-            return("homePage");
+            return("homePageClear");
         }
         QuestionarioPerguntas questionarioPerguntas = new QuestionarioPerguntas();
         questionarioPerguntas.setId_turma(turma);
@@ -70,7 +70,7 @@ public class AlunoController {
 
 
         model.addAttribute("mensagem", "Pronto, seu tipo caracteristico é " + tipo +  " agora você precisa apenas aguardar");
-        return "homePage";
+        return "homePageClear";
     }
 
     @GetMapping(value = "/aluno/excluir/{id}")
@@ -80,9 +80,10 @@ public class AlunoController {
         if(aluno == null){
             return "redirect:turma/index";
         }
+        Long idRetorno = aluno.getidTurma().getIdTurma();
         this.alunoRepository.delete(aluno);
 
-        return "redirect:/turma/index";
+        return "redirect:/turma/visualizar/" + idRetorno;
     }
 
 
@@ -108,10 +109,11 @@ public class AlunoController {
         }
 
         alunoBanco.setNome(nomeAluno);
+        Long idRetorno = alunoBanco.getidTurma().getIdTurma();
         this.alunoRepository.save(alunoBanco);
 
 
-        return "redirect:/";
+        return "redirect:/turma/visualizar/" + idRetorno;
     }
 
     /*editar equipe do aluno*/

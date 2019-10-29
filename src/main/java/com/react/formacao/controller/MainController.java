@@ -9,16 +9,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class MainController {
 
 
 
 	 @RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
-	    public String homePage(Model model) {
+	    public String homePage(Model model, HttpSession session) {
 		 model.addAttribute("nome_usuario", SecurityContextHolder
 				 .getContext().getAuthentication().getName());
-
 	 		return "homePage";
 	    }
 }

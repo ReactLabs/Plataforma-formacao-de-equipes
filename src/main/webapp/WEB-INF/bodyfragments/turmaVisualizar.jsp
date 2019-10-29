@@ -17,7 +17,7 @@
         </c:if>
         <hr>
         <div class="alert alert-success" style="margin: 0px 35px 5px 0px !important; padding: 10px !important;">
-            <strong>Link da os alunos responderem ao questionario: <c:out value="${link}"></c:out></strong><br>
+            <strong>Link para os alunos responderem ao questionario:</strong>  <input disabled id="lab_link" value="<c:out value="${link}"></c:out>"/> <button onclick="copiar()" class="btn bg-info">Copiar Link</button> <br>
             <strong>Senha da turma: <c:out value="${turma.senha}"></c:out></strong>
         </div>
     </div>
@@ -87,5 +87,16 @@
         </div>
     </div>
 </div>
+
+<script>
+   function copiar() {
+       var obj = document.getElementById('lab_link');
+       obj.disabled= false;
+       obj.select();
+       document.execCommand("copy");
+       obj.disabled = true;
+    }
+    
+</script>
 
 
