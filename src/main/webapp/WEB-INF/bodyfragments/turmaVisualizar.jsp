@@ -43,9 +43,9 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${alunos}" var="aluno">
+                <c:forEach items="${alunos}" varStatus="i" var="aluno">
                     <tr>
-                        <th><c:out value="${aluno.id}"/></th>
+                        <th><c:out value="${i.count}"/></th>
                         <th><c:out value="${aluno.nome}"/></th>
                         <th><c:out value="${aluno.getTipoSocial()}"/></th>
                         <td><a href="/aluno/editar/${aluno.id}" title="editar" type="button" class="btn btn-info btn-sm"><span class="far fa-edit"></span></a>
