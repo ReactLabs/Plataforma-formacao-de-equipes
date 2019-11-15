@@ -1,1 +1,2 @@
-# -Plataforma-formacao-de-equipes
+# - Equipe++
+Uma Plataforma para formacao de equipes.
