@@ -40,7 +40,7 @@
                     <div class="content">
                         <div class="header">
                             <div class="logo text-center"><img src="<c:url value="/resources/assets/img/react.png" />" alt="Klorofil Logo"></div>
-                            <p class="lead">Login to your account</p>
+                            <p class="lead">Entre com sua conta</p>
                         </div>
                         <form class="form-auth-small" action="/login" method="POST">
                             <div class="form-group">
@@ -54,7 +54,7 @@
                             <div class="row">
                                 <button type="submit" class="btn btn-react btn-lg btn-block">LOGIN</button>
                                 <a  href="" data-toggle="modal" data-target="#exampleModal">
-                                    Desejo me cadastrar.
+                                    Desejo me cadastrar
                                 </a>
                             </div>
                         </form>
@@ -64,7 +64,7 @@
                     <div class="overlay"></div>
                     <div class="content text">
                         <h1 class="heading">REACTing to the next level!</h1>
-                        <p>by The Develovers</p>
+                        <p>by The Develovers with ❤</p>
                     </div>
                 </div>
                 <div class="clearfix"></div>

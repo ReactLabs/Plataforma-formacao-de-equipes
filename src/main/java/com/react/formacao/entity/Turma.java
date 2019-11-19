@@ -37,9 +37,7 @@ public class Turma {
         this.listAluno = listAluno;
     }
 
-    public Long getIdTurma() {
-        return idTurma;
-    }
+    public Long getIdTurma() { return idTurma; }
 
     public void setIdTurma(Long idTurma) {
         this.idTurma = idTurma;

@@ -10,23 +10,6 @@
     </div>
 </c:if>
 
-<c:if test='${nome_usuario.equals("Denini")}'>
-
-    <a href="/dashboard/listar" class="btn bg-info" >Pedidos de cadastro</a>
-
-</c:if>
-
-<div class="panel panel-headline">
-    <div class="panel-heading">
-        <h3 class="panel-title">Bem vindo ao Equipe++</h3>
-    </div>
-    <div class="panel-body">
-        Uma plataforma simples, ágil e rápida para a criação de equipes para sala de aula.<br>
-        Utilize os botões ao lado para navegar pela ferramenta.
-    </div>
-</div>
-
-
 <div class="panel panel-headline">
     <div class="panel-heading">
         <h3 class="panel-title">Tipos sociais e suas caracteristicas</h3>

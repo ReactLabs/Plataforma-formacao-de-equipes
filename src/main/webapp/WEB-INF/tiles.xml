@@ -47,7 +47,7 @@
     <!-- Home Page  -->
     <definition name="homePageClear" extends="base.definition.clear">
         <put-attribute name="title" value="Home Page" />
-        <put-attribute name="body" value="/WEB-INF/bodyfragments/_home.jsp" />
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/_home_clear.jsp" />
     </definition>
 
     <!-- ContactUs Page -->

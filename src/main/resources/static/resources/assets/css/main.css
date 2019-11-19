@@ -573,7 +573,8 @@ ul.list-justify > li {
 
 .btn-react {
   background-color: #7A050E;
-  border-color: #5E040B; }
+  border-color: #5E040B;
+  color: white}
 .btn-react:hover, .btn-react:focus {
   background-color: #640611;
   border-color: #960611; }

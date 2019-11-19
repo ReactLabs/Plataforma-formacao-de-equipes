@@ -5,22 +5,24 @@
 
 <div class="panel panel-headline">
     <div class="panel-heading">
-        <h3 class="panel-title">Informações da turma</h3>
-        <p class="panel-subtitle">Nome da turma: <c:out value="${turma.nome}">Turma sem nome</c:out></p>
-        <p class="panel-subtitle"><c:out value="${turma.descricao}"></c:out></p>
+        <h3 class="panel-title" style="font-size: large">Informações da turma</h3>
+        <p class="panel-subtitle" style="font-size: large">Nome da turma: <c:out value="${turma.nome}">Turma sem nome</c:out></p>
+        <p class="panel-subtitle" style="font-size: large"><c:out value="${turma.descricao}"></c:out></p>
 
         <c:if test="${turma.isAberta()}">
-            <p class="panel-subtitle"><b>Status:</b> Aberta</p>
+            <p class="panel-subtitle" style="font-size: x-large"><b>Status:</b> Aberta</p>
         </c:if>
         <c:if test="${!turma.isAberta()}">
-            <p class="panel-subtitle"><b>Status:</b> Fechada</p>
+            <p class="panel-subtitle" style="font-size: x-large"><b>Status:</b> Fechada</p>
         </c:if>
         <hr>
+        <c:if test="${turma.isAberta()}">
         <div class="alert alert-success" style="margin: 0px 35px 5px 0px !important; padding: 10px !important;">
             <strong>Link para os alunos responderem ao questionario:</strong>  <input disabled id="lab_link" value="<c:out value="${link}"></c:out>"/> <button onclick="copiar()" class="btn bg-info">Copiar Link</button> <br>
             <strong>Senha da turma: <c:out value="${turma.senha}"></c:out></strong>
         </div>
-    </div>
+        </c:if>
+</div>
     <div class="panel-body">
         <%--<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Fechar turma e criar as equipes</button>--%>
 

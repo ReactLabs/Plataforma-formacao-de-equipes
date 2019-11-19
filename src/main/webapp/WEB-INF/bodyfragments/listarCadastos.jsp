@@ -15,7 +15,7 @@
                     <th>#</th>
                     <th>Nome</th>
                     <th>Login</th>
-                    <th>Observacao</th>
+                    <th>Observação</th>
                     <th>Ações</th>
                 </tr>
                 </thead>

@@ -19,9 +19,9 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${turmas}" var="turma">
+                <c:forEach items="${turmas}" varStatus="i" var="turma">
                     <tr>
-                        <td><c:out value="${turma.getIdTurma()}"/></td>
+                        <td><c:out value="${i.count}"/></td>
                         <td><c:out value="${turma.getNome()}"/></td>
                         <c:if test="${turma.isAberta()}">
                             <td>Aberta</td>

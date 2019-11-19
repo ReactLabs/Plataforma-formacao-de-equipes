@@ -22,7 +22,7 @@
                 <form:input type="text" class="form-control" placeholder="Seu nome" name="nome" path="nome" />
                 <br>
                 <form:input type="hidden" class="form-control" placeholder="Pertence à turma" name="nome" path="id_turma" readonly="true" />
-                <br>
+
                 <form:input type="text" class="form-control" placeholder="Informe a senha da turma informada pelo seu professor" name="nome" path="senha" />
                 <br>
             </div>
