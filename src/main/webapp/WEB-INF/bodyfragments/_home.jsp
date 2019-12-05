@@ -18,10 +18,11 @@
 
 <div class="panel panel-headline">
     <div class="panel-heading">
-        <h3 class="panel-title">Bem vindo ao Equipe++</h3>
+        <h3 class="panel-title">Bem vindo ao TENT</h3>
+        <h4 class="panel-title" style="font-size: 19px;">Teams basEd on humaN aspecTs</h4>
     </div>
     <div class="panel-body">
-        Uma plataforma simples, ágil e rápida para a criação de equipes para sala de aula.<br>
+        Uma ferramenta simples, ágil e rápida para a criação de equipes para sala de aula.<br>
         Utilize os botões ao lado para navegar pela ferramenta.
     </div>
 </div>
